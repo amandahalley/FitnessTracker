@@ -35,6 +35,18 @@ public class FitnessTrackerTest {
         assertEquals("Shoulder Press", workout.getExercise().getFirst().getName());
 
     }
+
+    //testing WorkoutLog class
+    @Test
+    public void testLogWorkout() {
+        WorkoutLog workoutLog = new WorkoutLog();
+        Workout workout  = new Workout("Push Day", "60", "2025-02-02", new ArrayList<>());
+
+        workoutLog.logWorkout(workout);
+
+        assertEquals(1, workoutLog.getWorkouts().size());
+        assertEquals("Push Day", workoutLog.getWorkouts().getFirst().getName());
+    }
 }
 
 
