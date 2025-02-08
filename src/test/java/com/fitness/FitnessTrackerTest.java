@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FitnessTrackerTest {
 
@@ -54,6 +55,15 @@ public class FitnessTrackerTest {
         goalSetting.setGoal("Shoulder press 45lbs");
 
         assertEquals("Shoulder press 45lbs", goalSetting.getGoal());
+    }
+
+    @Test
+    public void testGoalComplete() {
+        GoalSetting goalSetting = new GoalSetting();
+        goalSetting.setGoal("Shoulder press 45lbs");
+
+        goalSetting.completeGoal();
+        assertTrue(goalSetting.isGoalCompleted());
     }
 }
 
