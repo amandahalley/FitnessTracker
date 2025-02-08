@@ -46,7 +46,7 @@ public class FitnessTrackerApp {
 
     private static void workoutLogMenu(){
         System.out.println("\nWelcome to Workout Logger!");
-        System.out.println("Please choose what you would like to do.");
+        System.out.println("--------------------------");
         System.out.println("1. Log a Workout");
         System.out.println("2. View Your Workouts");
         System.out.println("3. Set a Goal");
@@ -60,7 +60,7 @@ public class FitnessTrackerApp {
     private static void logWorkout() {
 
         System.out.println("\nLog a Workout ");
-        System.out.print("Enter the name of your workout: ");
+        System.out.print("Enter workout title: ");
         String workoutName = scanner.nextLine();
 
         System.out.print("Enter duration of workout: ");
@@ -103,7 +103,8 @@ public class FitnessTrackerApp {
 
     //viewing logged workouts
     private static void viewWorkout() {
-        System.out.println("Viewing Your Workouts");
+        System.out.println("\nViewing Your Workouts");
+        System.out.println("---------------------");
 
         if (workoutLog.getWorkouts() == null || workoutLog.getWorkouts().isEmpty()) {
             System.out.println("You currently have no logged workouts.");
@@ -111,7 +112,8 @@ public class FitnessTrackerApp {
         }
 
         for (Workout workout : workoutLog.getWorkouts()) {
-            System.out.println("\nWorkout: " + workout.getName() + " Date: " + workout.getDate());
+            System.out.println("\n** Workout: " + workout.getName() + " Date: " + workout.getDate() + " **");
+
             for (Exercise exercise : workout.getExercise()) {
                 System.out.println("- " + exercise.getName() + ": sets: " + exercise.getSets() + " reps: " + exercise.getReps() + "(" + exercise.getWeight() + " lbs)");
             }
@@ -120,7 +122,8 @@ public class FitnessTrackerApp {
 
     //setting workout goal
     private static void setWorkoutGoal() {
-        System.out.println("Set Your Workout Goal");
+        System.out.println("\nSet Your Workout Goal");
+        System.out.println("----------------------");
 
         System.out.println("Enter your goal: ");
         String targetGoal = scanner.nextLine();
@@ -132,6 +135,7 @@ public class FitnessTrackerApp {
     //checking goal progress
     private static void checkGoalProgress() {
         System.out.println("Check Your Progress");
+        System.out.println("------------------");
 
         if (progressTracker.checkProgressOfGoal()) {
             System.out.println("You have reached your goal!");
